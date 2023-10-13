@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const IS_ENV_PROD = process.env.NODE_ENV === 'production';
 const path = require('path');
-const resolve = (directory) => path.resolve(__dirname, directory);
+const resolve = directory => path.resolve(__dirname, directory);
 
 module.exports = {
   entry: './src/index.js',
@@ -20,7 +20,15 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
     alias: {
-      //fill alias for files
+      containers: resolve('../src/containers/'),
+      components: resolve('../src/components/'),
+      store: resolve('../src/store/'),
+      actions: resolve('../src/actions'),
+      constants: resolve('../src/constants'),
+      reducers: resolve('../src/store/reducers/'),
+      sagas: resolve('../src/store/sagas/'),
+      utils: resolve('../src/utils/'),
+      assets: resolve('../src/assets/'),
     },
   },
   module: {
