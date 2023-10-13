@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // const IS_ENV_PROD = process.env.NODE_ENV === 'production';
 const path = require('path');
-const resolve = directory => path.resolve(__dirname, directory);
+const resolve = (directory) => path.resolve(__dirname, directory);
 
 module.exports = {
   entry: './src/index.js',
@@ -58,6 +58,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html',
+      inject: 'body',
     }),
   ],
 };

@@ -1,12 +1,15 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import App from 'containers/App';
+import { Routes, Route } from 'react-router-dom';
+import Landing from 'containers/Landing';
 import store from 'store/store';
 
 const Main = () => {
   return (
     <Provider store={store}>
-      <App />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+      </Routes>
     </Provider>
   );
 };
