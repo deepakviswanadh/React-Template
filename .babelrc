@@ -1,0 +1,55 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": {
+          "version": 3,
+          "proposals": false
+        },
+        "targets": {
+          "ie": "11"
+        }
+      }
+    ],
+    [
+      "@babel/preset-react",
+      {
+        "development": true
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-external-helpers",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": 3
+      }
+    ],
+    "@babel/plugin-transform-react-constant-elements",
+    "@babel/plugin-transform-react-inline-elements",
+    "transform-react-remove-prop-types",
+    "@babel/plugin-transform-react-display-name",
+    "@babel/plugin-transform-react-jsx",
+    "@babel/plugin-transform-react-jsx-compat",
+    "@babel/plugin-transform-react-jsx-self",
+    "@babel/plugin-transform-react-jsx-source",
+    "@babel/plugin-transform-object-assign",
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-syntax-optional-chaining"
+  ],
+  "env": {
+    "production": {
+      "plugins": [
+        ["babel-plugin-import", "core"],
+        ["babel-plugin-import", "icons"]
+      ]
+    },
+    "test": {
+      "plugins": ["dynamic-import-node"]
+    }
+  }
+}
